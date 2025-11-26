@@ -1,0 +1,48 @@
+contact = {}
+
+def add_cont(name, number):
+    contact[name] = number
+    print("Contact added successfully!")
+
+def src_cont(src_name):
+    if src_name in contact:
+        print(f"{src_name} → {contact[src_name]}")
+    else:
+        print("Contact not found.")
+
+def del_cont(del_name):
+    if del_name in contact:
+        del contact[del_name]
+        print("Contact deleted successfully!")
+    else:
+        print("Your number is not saved!")
+
+while True:
+
+    print("\n-- Add number in choice --")
+    print("1.Add  2.Search  3.Delete  4.Show  5.Exit")
+    ch = input("Choice: ")
+
+    if ch == "1":
+        name = input("Enter name: ")
+        number = input("Enter number: ")
+        contact[name] = number
+        print("Contact added.")
+
+    elif ch == "2":
+        src_name = input("Enter name to search: ")
+        src_cont(src_name)
+
+    elif ch == "3":
+        del_name = input("Enter name to delete: ")
+        del_cont(del_name)
+
+    elif ch == "4":
+        print(contact)
+
+    elif ch == "5":
+        print("Program exited.")
+        break
+
+    else:
+        print("Invalid!")
